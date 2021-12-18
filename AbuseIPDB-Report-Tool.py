@@ -65,8 +65,8 @@ def main():
     comment = 'IP:[' + ip + '] ' + 'Request:[' + request + '] ' + 'Time:[' + time + '] ' + 'Size:[' + size + '] ' + 'Client:[ ' + client + '] ' + 'Referring URL:[' + ref + '] '
     checkIP(ip)
     #Ask user to confirm checkIP() has no errors/high abuse score.
-    reportIPAddr = input('Report this IP? yes/no/exit:')
-    if reportIPAddr == 'yes' or 'Yes' or 'y' or 'Y':
+    reportIPAddr,rIP = input('Report this IP? yes/no/exit:')
+    if reportIPAddr == 'yes' or rIP == 'Yes' or rIP == 'y' or rIP == 'Y':
         reportIP(ip, comment, attackCategories)
     elif reportIPAddr == 'exit':
         sys.exit()
@@ -85,7 +85,7 @@ def accessLog():
     checkIP(ip)
     #Ask user to confrim checkIP() has no errors/high abuse score.
     reportIPAddr = input('Report this IP? yes/no/exit:')
-    if reportIPAddr == 'yes' or 'Yes' or 'y' or 'Y':
+    if reportIPAddr == 'yes' or rIP == 'Yes' or rIP == 'y' or rIP == 'Y':
         #Prints the .csv of Attack Categories
         print(df_reset)
         attackCategories = input('Enter Attack Categories That Apply (1,2,3..etc):')
